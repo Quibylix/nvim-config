@@ -54,3 +54,4 @@ vim.diagnostic.config({
 vim.o.backupcopy = "yes"
 
 require("config.lazy")
+require("config.diagnostics")
