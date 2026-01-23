@@ -1,4 +1,4 @@
-vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float(nil, { focus = false })<CR>',
+vim.api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float(nil, { focus = false })<CR>',
   { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>',
   { noremap = true, silent = true })

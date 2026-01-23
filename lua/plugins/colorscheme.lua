@@ -41,6 +41,9 @@ return {
 
       require("onedarkpro").setup({
         highlights = configHighlights,
+        options = {
+          transparency = true,
+        }
       })
 
       vim.cmd([[colorscheme onedark]])
