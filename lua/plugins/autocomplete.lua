@@ -31,6 +31,7 @@ local init = function()
   end, { "i", "s" })
 
   cmp.setup({
+    preselect = cmp.PreselectMode.None,
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body) -- For Luasnip
