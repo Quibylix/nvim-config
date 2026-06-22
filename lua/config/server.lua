@@ -28,4 +28,5 @@ return {
   biome = {},
   jsonls = {},
   prismals = {},
+  gopls = {},
 }
