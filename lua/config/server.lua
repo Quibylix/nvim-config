@@ -1,4 +1,4 @@
-return {
+local server_config = {
   clangd = {
     inlay_hints = false,
     filetypes = { "c", "cpp", "objc", "objcpp", "arduino" },
@@ -30,3 +30,5 @@ return {
   prismals = {},
   gopls = {},
 }
+
+return server_config

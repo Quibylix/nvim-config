@@ -1,12 +1,11 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim" },
+    "hrsh7th/cmp-nvim-lsp",
     config = function()
+      local server_config = require("config.server")
       local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-      local servers_config = require("config.server")
 
-      for server_name, server_opts in pairs(servers_config) do
+      for server_name, server_opts in pairs(server_config) do
         server_opts.capabilities = capabilities
         vim.lsp.config[server_name] = server_opts
         vim.lsp.enable(server_name)
@@ -14,8 +13,8 @@ return {
 
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.c", "*.cpp", "*.lua" },
-        callback = function()
-          vim.lsp.buf.format()
+        callback = function(args)
+          vim.lsp.buf.format({ bufnr = args.buf, async = false })
         end
       })
     end
