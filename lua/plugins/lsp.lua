@@ -1,24 +1,5 @@
 return {
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    config = function()
-      local server_config = require("config.server")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-      for server_name, server_opts in pairs(server_config) do
-        server_opts.capabilities = capabilities
-        vim.lsp.config[server_name] = server_opts
-        vim.lsp.enable(server_name)
-      end
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.c", "*.cpp", "*.lua" },
-        callback = function(args)
-          vim.lsp.buf.format({ bufnr = args.buf, async = false })
-        end
-      })
-    end
-  },
+  "neovim/nvim-lspconfig",
   {
     "jinzhongjia/LspUI.nvim",
     event = "LspAttach",
