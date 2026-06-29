@@ -55,3 +55,4 @@ vim.o.backupcopy = "yes"
 
 require("config.lazy")
 require("config.diagnostics")
+require("config.treesitter")
