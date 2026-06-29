@@ -11,11 +11,13 @@ local language_parsers = {
   json = { url = "https://github.com/tree-sitter/tree-sitter-json" },
   yaml = { url = "https://github.com/tree-sitter-grammars/tree-sitter-yaml" },
   go = { url = "https://github.com/tree-sitter/tree-sitter-go" },
+  markdown = { url = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", location = "/tree-sitter-markdown" },
 }
 
 vim.treesitter.language.register("bash", { "env" })
 vim.treesitter.language.register("tsx", { "typescriptreact" })
 vim.treesitter.language.register("javascript", { "javascriptreact", "ecma", "ecmascript", "jsx", "js" })
+
 
 require("config.treesitter.install").update(language_parsers)
 
